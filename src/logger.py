@@ -1,15 +1,16 @@
 import logging
 import os
+from pathlib import Path
+from helpers import ensure_directory_exists
 
-log_dir = "logs"
-log_file_name ="log.txt"
 
-os.makedirs(log_dir, exist_ok=True)
-log_file = os.path.join(log_dir, log_file_name)
+repo_root = Path(__file__).parent.parent
+log_dir_path = repo_root / "logs"
+os.makedirs(log_dir_path, exist_ok=True)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-handler = logging.FileHandler(log_file)    
+handler = logging.FileHandler(log_dir_path / "log.txt")    
 
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)-8s %(message)s")
 handler.setFormatter(formatter)
