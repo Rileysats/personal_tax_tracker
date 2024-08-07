@@ -1,0 +1,15 @@
+TAX
+
+Add a asset purchase
+    - id, date, value, stock code, amount, type
+    - 1, 01/02/2024, Stock Buy, NTR, 100, Buy, AUD
+    - 2, 02/02/2024, Interest, NTR, 3, Interest, AUD
+Add a asset sell
+    - date, value, stock code, amount, type
+Add a deduction
+    - Desc, value
+
+Files:
+    - stocks
+    - deduction
+    - 
