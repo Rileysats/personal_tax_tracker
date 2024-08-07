@@ -1,7 +1,7 @@
 import csv
 import os
 import sqlite3
-import contants
+import constants
 from logger import logger
 
 class Storage():
@@ -53,7 +53,7 @@ class Storage():
         logger.info(f"Executing query: {query} with values {data}")
         # table_name = self.extract_table_names(query, "FROM")
         if not self.check_table_exist(table_name):
-            create_table_query = contants.CREATE_TABLES[table_name]
+            create_table_query = constants.CREATE_TABLES[table_name]
             logger.info(f"Creating table: {table_name} with query \n {create_table_query}")
             self.execute_sql(create_table_query)
             logger.info("Table created")
@@ -71,7 +71,7 @@ class Storage():
         pass
 
     def check_table_exist(self, table_name) -> bool:
-        self.execute_sql(contants.CHECK_TABLE_EXISTS.format(table_name=table_name))
+        self.execute_sql(constants.CHECK_TABLE_EXISTS.format(table_name=table_name))
         if self.cursor.fetchone() is None:
             return False
         return True

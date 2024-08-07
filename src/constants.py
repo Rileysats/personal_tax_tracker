@@ -3,7 +3,7 @@ INSERT_INTO_ASSETS = """
                     """
 
 INSERT_INTO_DEDUCTIONS = """
-                        INSERT INTO deductions (Desc, Value) VALUES (?, ?)
+                        INSERT INTO deductions (Type, Description, Value) VALUES (?, ?, ?)
                         """
 
 CHECK_TABLE_EXISTS = """
@@ -27,7 +27,8 @@ CREATE_TABLES = {
                 """
                     CREATE TABLE IF NOT EXISTS deductions (
                         ID INTEGER PRIMARY KEY,
-                        Desc TEXT,
+                        Type TEXT,
+                        Description TEXT,
                         Value FLOAT
                     )
                 """
