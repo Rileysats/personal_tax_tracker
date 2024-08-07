@@ -21,8 +21,7 @@ class Asset():
                 {
                     "Sell Asset": self.sell_asset,
                     "Buy Asset": self.buy_asset
-                }
-                [type](ans)
+                }[type](ans)
                
             case "Add Interest":
                 ans = self.get_interest_dets()
@@ -67,7 +66,7 @@ class Asset():
                                 data=(
                                     datetime.now().strftime("%Y-%m-%d"),
                                     "Interest",
-                                    f"{ans["source"]} interest",
+                                    f"{ans['source']} interest",
                                     ans["source"],
                                     ans["value"],
                                     ans["currency"]
@@ -81,7 +80,7 @@ class Asset():
                                 data=(
                                     datetime.now().strftime("%Y-%m-%d"),
                                     "Dividend",
-                                    f"{ans["ticker"]} dividend",
+                                    f"{ans['ticker']} dividend",
                                     ans["ticker"],
                                     ans["value"],
                                     ans["currency"]
