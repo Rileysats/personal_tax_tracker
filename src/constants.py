@@ -10,6 +10,14 @@ CHECK_TABLE_EXISTS = """
                     SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{table_name}'
                     """ 
 
+SELECT_ALL = """
+            SELECT * FROM {table_name}
+            """
+
+SELECT_ALL_FILTER = """
+                    SELECT * FROM {table_name} WHERE {filters}
+                    """
+
 CREATE_TABLES = { 
                 "assets": 
                 """
